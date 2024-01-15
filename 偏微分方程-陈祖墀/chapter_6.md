@@ -35,3 +35,24 @@ $$
 且任意 $X$ 中的有界序列都是 $Y$ 中的准紧集。
 
 由此，显然 $H^1_0\subset H^1 = W^{1,2}\subset\subset L^2 \ \ (n\geq 3)$。注意！书上讨论的Laplace算子的特征值问题，只针对 $n\geq 3$ 的情况。
+
+**（p183）** Theorem 6.2.1证明思路（$K_1$ 为 $H^1_0(\Omega)\subset L^2(\Omega)$ 中的非零元。$K_1'$ 为 $H^1_0(\Omega)$ 中按照 $L^2$范数的单位球面）：
+1. 根据 $\lambda_1$ 的定义，找到 $H^1_0(\Omega)$ 中的序列 $\{u_k\}\subset K_1'$（$\{u_k\}$ 是 $Q[u]$ 的极小化序列的子列 ）在 $L^2(\Omega)$ 中收敛到某一 $u$。
+2. 已有 $u_k\to u$ 在 $L^2(\Omega)$ 中成立，然后证明 $\{u_k\}$ 是 $H^1_0(\Omega)$ 中的柯西列。由于 $H^1_0(\Omega)$ 是Hilbert空间，即完备，因此由极限的唯一性， $u_k\to u$ 在 $H^1_0(\Omega)$ 中成立。
+3. 
+$$
+\begin{aligned}
+\lambda_1&=\lim_{k\to\infty}Q[u_k]\ \ \ \ \ \text{极小化序列的子列}\\
+&=Q[u]\ \ \ \ \ \text{$Q[u]$ 是范数，因此是连续函数，$H^1_0(\Omega)$ 中的序列极限拿到里面}\\
+&=\frac{Q[u]}{\Vert u\Vert_2^2}\ \ \ \ \ \text{$\Vert \cdot \Vert_2^2$ 连续，$L^2(\Omega)$ 中的序列极限使 $\Vert u \Vert_2^2=\lim_{k\to\infty}\Vert u_k \Vert_2^2=1$}\\
+&=J[u]\\
+&=\inf_{v\in{K_1}}J[v]\ \ \ \ \ \text{$\lambda_1$ 的定义}
+\end{aligned}
+$$
+即 $J[v]$ 的下确界在 $H^1_0(\Omega)$ 中是可达的。
+4. 由于 $J[v]$ 在 $v=u$ 极小，对任意 $0\neq v\in H_0^1(\Omega)$ 有：
+$$
+\frac{dJ[u+tv]}{dt}=0
+$$
+变形后得到 $-\Delta$ 的（广义）特征值的定义式。这就证明了 $\lambda_1=\inf_{v\in{K_1}}J[v]$ 是 $-\Delta$ 的特征值。
+5. 最后证明是最小特征值。通过特征值的定义式易得。
